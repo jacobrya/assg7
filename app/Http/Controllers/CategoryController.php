@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -45,10 +44,5 @@ class CategoryController extends Controller
         $category->delete();
 
         return response()->json(['message' => 'Deleted'], 200);
-    }
-
-    public function byProduct(Product $product)
-    {
-        return response()->json($product->categories, 200);
     }
 }
